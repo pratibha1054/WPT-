@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Array Operations</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="cNum" name="cNum" placeholder="Enter Number"><br><br>
+            <button onclick="checkValue()">Check Value</button><br><br>
+            <button onclick="addToEnd()">Add</button><br><br>
+            
+            <input type="text" id="insertIn" name="insertIn"><br><br>
+            <button onclick="insertAtIndex()">Insert</button><br><br>
+            <button onclick="deleteAtIndex()">Delete</button><br><br>
+            
+            <p id="output"></p>
+            <p id="showArr"></p>
+            <p id="deleteArr"></p>
+
+        </div>
+        
+
+        <script>
+            var arr = [10,20,30,40,50];
+
+            function checkValue(){
+
+                let cval = document.getElementById("cNum").value;
+
+                if(arr.includes(Number(cval))){
+                    document.getElementById("output").innerHTML = "Value Found";
+
+                } else {
+                    document.getElementById("output").innerHTML = "Value Not Found";
+
+                }
+
+            }
+
+            function addToEnd(){
+                let cval = document.getElementById("cNum").value;
+                arr.push(Number(cval));
+                document.getElementById("output").innerHTML = "Array: " + arr;
+                
+            }
+
+            function insertAtIndex(){
+                let cval = document.getElementById("cNum").value;
+                let index = document.getElementById("insertIn").value;
+
+                 let lastElement = arr.pop();
+
+                arr.splice(index,0,Number(cval));
+                document.getElementById("showArr").innerHTML = "Array: " + arr;
+
+            }
+
+            function deleteAtIndex(){
+                 let cval = document.getElementById("cNum").value;
+                let index = document.getElementById("insertIn").value;
+
+                arr.splice(2,1);
+                document.getElementById("deleteArr").innerHTML = "Array: " + arr;
+
+
+            }
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Currency Convertor</title>
+    <style>
+        .Container {
+            height: 500px;
+            width: 300px;
+            border: 2px solid black;
+            padding: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container">
+
+        <label for="">Amount: </label>
+        <input type="text" id="amtVal"> <br><br>
+
+
+        <label for="">From: </label>
+        <select id="from">
+            <option value="rupee">rupee</option>
+            <option value="dollar">dollar</option>
+            <option value="euro">euro</option>
+        </select> <br><br>
+
+        <label for="">To :</label>
+        <select id="to">
+            <option value="rupee">rupee</option>
+            <option value="dollar">dollar</option>
+            <option value="euro">euro</option>
+        </select> <br><br>
+
+        <button onclick="convertCurrency()">Convert</button> <br><br>
+
+
+        <p id="output" style="background-color:rgb(238, 231, 223); border-color: red; 
+                color: brown; border-style: solid; border: 1px; border-radius: 1%;">Result Will appear here....</p>
+
+
+    </div>
+    <script>
+        function convertCurrency() {
+            var amt = document.getElementById("amtVal").value;
+            var fvalue = document.getElementById("from").value;
+            var tvalue = document.getElementById("to").value;
+
+            //alert(amt);
+
+            let result ;
+
+            if (fvalue == "rupee" && tvalue == "dollar")
+                result = amt / 80;
+
+            else if (fvalue == "dollar" && tvalue == "rupee")
+                result = amt * 80;
+
+            else if (fvalue == "rupee" && tvalue == "euro")
+                result = amt / 90;
+
+            else if (fvalue == "euro" && tvalue == "rupee")
+                result = amt * 90;
+
+            else if (fvalue == "dollar" && tvalue == "euro")
+                result = amt * 0.9;
+
+            else if (fvalue == "euro" && tvalue == "dollar")
+                result = amt * 1.1;
+
+            document.getElementById("output").innerHTML = "Converted Amount = " + result;
+
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Color Change</title>
+</head>
+
+<body>
+    <div style="align-items: center;">
+        <div>
+            <input type="color" id="col_1">
+            <button onclick="changePara()">Change</button>
+
+        </div>
+        <div id="colorPara">
+            <p1 style="margin-top: 50px; margin-left: 50px;">A paragraph always starts on a new line, and browsers automatically add some white space (a margin)
+                before and after a paragraph.</p1> <br><br>
+            <p2 style="margin-top: 20px; margin-left: 50px;">Hypertext Markup Language (HTML) is the standard markup language[a] for documents designed to be
+                displayed in a web browser. It defines the content and structure of web content. It is often assisted by
+                technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p2> <br><br>
+            <p3 style="margin-top: 20px; margin-left: 50px;">Web browsers receive HTML documents from a web server or from local storage and render the documents
+                into multimedia web pages. HTML describes the structure of a web page semantically and originally
+                included cues for its appearance.</p3> <br><br>
+            <p4 style="margin-top: 20px; margin-left: 50px;">HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such
+                as interactive forms may be embedded into the rendered page. HTML provides a means to create structured
+                documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes,
+                and other items. HTML elements are delineated by tags, written using angle brackets.</p4> <br><br>
+
+        </div>
+
+    </div>
+
+    <script>
+        function changePara(){
+            let color = document.getElementById("col_1").value;
+           // alert(color);
+            document.getElementById("colorPara").style.color = color;
+        }
+
+    </script>
+
+</body>
+
+</html>

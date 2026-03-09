@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Tables of Number</title>
+    </head>
+    <body>
+        <input type="number" id="num1" name="num1">
+        <button onclick="getTable()">Get Table</button>
+
+        <div id="result">
+
+        </div>
+
+        <script>
+            function getTable(){
+                let number = document.getElementById("num1").value;
+
+                let outPut = "";
+                for(let i = 1; i <= 10; i++) {
+                    outPut += number + " X " + i + " = " + (number * i ) + "<br>"; 
+                }
+                document.getElementById("result").innerHTML = outPut;
+            }
+
+
+        </script>
+    </body>
+</html>
+

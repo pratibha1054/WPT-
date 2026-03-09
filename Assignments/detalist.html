@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            .body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+                <label for="carInput">Your Cars Name: </label>
+                <input list = "cars" id="carInput">
+
+                <datalist id="cars">
+                    <option value="BMW"></option>
+                    <option value="Bentley"></option>
+                    <option value="Mercedes"></option>
+                    <option value="Audi"></option>
+                    <option value="Volkswagen"></option>
+                </datalist>
+
+                <button onclick="selectCar()" type="button">Click Here</button>
+            </div>
+        </form>
+
+        <p id="showCar"></p>
+
+        <script type="text/javascript">
+            function selectCar(){
+
+                var a  = document.getElementById("carInput").value;
+                document.getElementById("showCar").innerHTML = "You Select " +  a  + " options."
+            }
+        </script>
+    </body>
+</html>

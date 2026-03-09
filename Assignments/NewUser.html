@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>New User</title>
+    </head>
+    <body>
+        <div border = "2" height="250px"; width="500px">
+            <form>
+            <pre>
+                <label>FirstName: </label>
+                <input for="text" id="fname" name="fname" required></input>
+                <label>LastName: </label>
+                <input for="text" id="lname" name="lname" required></input>
+                <label>UserName: </label>
+                <input for="text" id="uname" name="uname" required></input>
+                <label>Gender :</label>
+                <input type="radio" name="gender" value="Male" id="male">Male
+                <input type="radio" name="gender" value="FeMale" id="female" >FeMale
+                <label>Knowledge :</label>
+                <input type="checkbox" name="lang" value="english" id="eng">Eglish
+                <input type="checkbox" name="lang" value="marathi" id="mar">Marathi
+                <input type="checkbox" name="lang" value="hindi" id="hin">Hindi
+                <label>Email Id: </label>
+                <input type="email" id="email" name="email" required>
+                <label>Password: </label>
+                <input type="password" id="pass" name="pass" required minlength="5" maxlength="8">
+                <label>Re-enter Password: </label>
+                <input type="password" id="pass1" name="pass1" required minlength="5" maxlength="8">
+                <button type="button" onclick="addUser()">Register</button>
+               
+            </pre>
+        </form>
+
+        </div>
+        
+        <hr>
+        <h3>Entered Details: </h3>
+
+        <!--    -->
+        <table border="1" id = "showuser">
+            <thead>
+                <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>user Name</th>
+                <th>Gender</th>
+                <th>Language</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Re-entered password</th>
+            </tr>
+           <tbody id="showallUsers">
+
+           </tbody>
+
+        </thead>
+            
+
+        </table>
+
+        <script type="text/javascript">
+            function addUser(){
+                var fname = document.getElementById("fname").value;
+                var lname = document.getElementById("lname").value;
+                var uname = document.getElementById("uname").value;
+                var email = document.getElementById("email").value;
+                var pass = document.getElementById("pass").value;
+                var pass1 = document.getElementById("pass1").value;
+
+                var gender = "";
+                if(document.getElementById("male").checked){
+                    gender = "Male";
+
+                } else {
+                    gender = "Female";
+                }
+
+                var lang = "";
+                if(document.getElementById("eng").checked){
+                    lang += "English";
+
+                }
+                if(document.getElementById("mar").checked){
+                    lang += "Marathi";
+
+                }
+                if(document.getElementById("hin").checked){
+                    lang += "Hindi";
+
+                }
+
+                // document.getElementById("showuser").innerHTML = 
+                // "FirstName: " + fname + "<br>" +
+                // "LastName: " + lname + "<br>" +
+                // "userName: " + uname + "<br>" +
+                // "Gender: " + gender + "<br>" +
+                // "Language: " + lang + "<br>" +
+                // "Email: " + fname + "<br>" +
+                // "Password: " + pass + "<br>" +
+                // "Re-entered Password: " + pass1 + "<br>" ;
+
+                // var table = document.getElementById("showuser");
+                var tableBody = document.getElementById("showallUsers");
+                var row = tableBody.insertRow();
+                // var row = table.insertRow();
+
+                row.insertCell(0).innerHTML = fname;
+                row.insertCell(1).innerHTML = lname;
+                row.insertCell(2).innerHTML = uname;
+                row.insertCell(3).innerHTML = gender;
+                row.insertCell(4).innerHTML = lang;
+                row.insertCell(5).innerHTML = email;
+                row.insertCell(6).innerHTML = pass;
+                row.insertCell(7).innerHTML = pass1;
+
+                document.querySelector("form").reset();
+
+
+                
+            }
+        </script>
+
+    </body>
+</html>

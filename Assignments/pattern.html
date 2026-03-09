@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Print Start Pattern</title>
+</head>
+
+<body>
+    <button type="button" onclick="printPattern()">Print Pattern</button>
+    <p id="starPattern"></p>
+
+    <script>
+        function printPattern() {
+            var data = " ";
+
+            for (var i = 3; i >= 1; i--) {
+
+
+                for (var j = 1; j <= i; j++) {
+                    data += " * ";
+                }
+                data += "<br>";
+            }
+
+            document.getElementById("starPattern").innerHTML = data;
+
+        }
+
+    </script>
+</body>
+
+</html>

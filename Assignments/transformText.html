@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+            Transform Text
+        </title>
+    </head>
+    <body>
+        <div style="margin-top: 20px;">
+            <input type="text" id="txt_1" name="txt_1" placeholder="Enter Text Here....">
+            <!-- <button onclick="transformtxt()">Transform Text</button> -->
+        </div>
+        <div style="margin-top: 20px;">
+            <input type="radio" id="upperCase" name="format" Value="UpperCase" onclick="transformText()">UpperCase
+            <input type="radio" id="lowerCase" name="format" Value="LowerCase" onclick="transformText()">LowerCase
+            <input type="radio" id="asitis" name="format" Value="asitis" onclick="transformText()">asitis
+
+        </div>
+        <p id="result"></p>
+
+        <script>
+            function transformText(){
+                var txt = document.getElementById("txt_1").value;
+                //alert(txt);
+                var selectedOption = document.querySelector('input[name="format"]:checked').value;
+
+                let transformedtext = "";
+
+                if(selectedOption === "UpperCase"){
+                    transformedtext = txt.toUpperCase();
+                } else if(selectedOption === "LowerCase"){
+                    transformedtext = txt.toLowerCase(); 
+                } else {
+                    transformedtext = txt;
+                }
+
+                document.getElementById("result").innerHTML = "Result: " + transformedtext;
+            } 
+        </script>
+    </body>
+</html>

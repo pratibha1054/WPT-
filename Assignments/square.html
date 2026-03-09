@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Square</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="squareNo" name="squareNo">
+            <button onclick="findSquare()">Submit</button>
+
+            <p id="result"></p>
+        </div>
+        <script>
+            function findSquare(){
+
+                let a = document.getElementById("squareNo").value;
+
+                document.getElementById("result").innerHTML = a * a;
+            }
+        </script>
+    </body>
+</html>

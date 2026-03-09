@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+            Array
+        </title>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="arr1" name="arr1">
+            <button onclick="addData()">Add</button>
+            <button onclick="displayData()">Display</button>
+            <div>
+                <ul id="dataList"></ul>
+            </div>
+        </div>
+
+        <script>
+            let arr = [];
+
+            function addData(){
+                let val = document.getElementById("arr1").value;
+                if(val !== " "){
+                    arr.push(val);
+                    //alert(arr);
+                    document.getElementById("arr1").value = alert("Added Value in Array.");
+                }
+            }
+
+            function displayData(){
+                let d1 = document.getElementById("dataList");
+                d1.innerHTML = " ";
+
+                for(let i = 0; i < arr.length; i++){
+                    d1.innerHTML += "<li>" + arr[i] + "</li>";
+                }
+                
+            }
+        </script>
+    </body>
+</html>
