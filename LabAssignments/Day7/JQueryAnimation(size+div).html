@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+
+#box{
+width:100px;
+height:100px;
+background:rgb(226, 63, 199);
+position:absolute;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button id="start">Start Animation</button>
+
+<div id="box"></div>
+
+<script>
+
+$("#start").click(function(){
+
+$("#box").animate({
+
+left:"400px",
+width:"200px",
+height:"200px",
+top:"100px",
+bottom:"50px",
+opacity:"0.5",
+
+},2000);
+
+});
+
+</script>
+
+</body>
+</html>

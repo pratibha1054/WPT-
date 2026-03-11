@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+            Login Page
+        </title>
+
+        <script>
+            function validateLogin()
+            {
+                var username=documtnet.getElaementById("uname").value;
+
+                var password=document.getElementById("pass").value;
+                //check empty field
+                if(username ==" "  &&  password ==" ")
+                 {
+                    alert("Both fields are required");
+                    return false;
+                 }
+                 //check passward length
+                 if(passward. lemgth<8 || password.length>10)
+                 {
+                    alert("Password must be between 8 and 10 characters");
+                    return false;
+                 }
+                 //check userdname and passward
+                 if(username=="iet" && password=="iet")
+                 {
+                    window.location="Home.html";
+                    return false;
+                 }
+                 else{
+                    alert("Invalid UserName or Password");
+                    return false;
+                 }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Login Form</h3>
+        <form onsubmit="return validateLogin()">
+
+            Username : <input type="text" id="uname" required ><br><br>
+
+            Password : <input type="password" id="pass"required><br><br>
+
+            <input type="submit" value="Login">
+
+        </form>
+    </body>
+</html>

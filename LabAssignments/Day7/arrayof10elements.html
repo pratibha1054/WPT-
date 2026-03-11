@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Array Operations</h3>
+
+<p id="original"></p>
+<p id="even"></p>
+<p id="odd"></p>
+<p id="sorted"></p>
+
+<script>
+
+let arr = [12,5,8,20,7,9,14,3,18,1];
+
+//display the original array
+document.getElementById("original").innerHTML =
+"Original Array : " + arr;
+
+// even numbers
+let even = arr.filter(num => num % 2 == 0);
+document.getElementById("even").innerHTML =
+"Even Numbers : " + even;
+
+// odd numbers
+let odd = arr.filter(num => num % 2 != 0);
+document.getElementById("odd").innerHTML =
+"Odd Numbers : " + odd;
+
+// sorted array
+let sorted = arr.slice().sort((a,b)=>a-b);
+document.getElementById("sorted").innerHTML =
+"Sorted Array : " + sorted;
+
+</script>
+
+</body>
+</html>

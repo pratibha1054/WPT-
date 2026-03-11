@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student JSON Example</title>
+</head>
+<body>
+    <h2>Student Data in JSON</h2>
+    <div id="studentData"></div>
+
+    <script>
+        
+        let student = {
+            StudentId: "101",
+            StudentName: "Pratibha",
+            Grade: "A"
+        };
+
+       
+        let studentJSON = JSON.stringify(student, null, 4);
+
+      
+        document.getElementById("studentData").innerText = studentJSON;
+    </script>
+</body>
+</html>

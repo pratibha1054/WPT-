@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>JavaScript Function Types</h3>
+
+<p id="output"></p>
+
+<script>
+function add(a,b){
+    return a+b;
+}
+
+let multiply = function(a,b){
+    return a*b;
+}
+
+let sub = (a,b) => a-b;
+
+setTimeout(function(){
+    console.log("Anonymous Function Executed");
+},1000);
+
+document.getElementById("output").innerHTML =
+"Add: " + add(5,3) + "<br>" +
+"Multiply: " + multiply(5,3) + "<br>" +
+"Subtract: " + sub(5,3);
+
+</script>
+
+</body>
+</html>

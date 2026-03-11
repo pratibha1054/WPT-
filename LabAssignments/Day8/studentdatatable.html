@@ -1,0 +1,43 @@
+<html>
+<body>
+
+Student ID:
+<input type="text" id="sid">
+
+Student Name:
+<input type="text" id="sname">
+
+<button onclick="addStudent()">Add</button>
+
+<table border="1" id="table">
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+</table>
+
+<script>
+
+function addStudent(){
+
+let id = document.getElementById("sid").value;
+let name = document.getElementById("sname").value;
+
+let student = {
+id:id,
+name:name
+};
+
+let table = document.getElementById("table");
+
+let row = table.insertRow();
+
+row.insertCell(0).innerHTML = student.id;
+row.insertCell(1).innerHTML = student.name;
+
+}
+
+</script>
+
+</body>
+</html>

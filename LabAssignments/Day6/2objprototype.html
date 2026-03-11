@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prototype Example</title>
+</head>
+<body>
+    <h2>Student Objects with Prototype Print Function</h2>
+    <div id="output"></div>
+
+    <script>
+        
+        function Student(id, name, grade) {
+            this.StudentId = id;
+            this.StudentName = name;
+            this.Grade = grade;
+        }
+
+        
+        Student.prototype.print = function() {
+            return "ID: " + this.StudentId + 
+                   ", Name: " + this.StudentName + 
+                   ", Grade: " + this.Grade;
+        };
+
+        
+        let student1 = new Student(101, "Rutuja Mengar", "A");
+        let student2 = new Student(102, "Pratibha Nikam", "B");
+
+       
+        document.getElementById("output").innerHTML =
+            student1.print() + "<br>" + student2.print();
+    </script>
+</body>
+</html>

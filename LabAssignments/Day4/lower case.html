@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<h3>Text Conversion</h3>
+
+<input type="text" id="text">
+
+<br><br>
+
+<input type="radio" name="case" onclick="convert('upper')"> UpperCase
+<input type="radio" name="case" onclick="convert('lower')"> LowerCase
+<input type="radio" name="case" onclick="convert('same')"> As It Is
+
+<p id="output"></p>
+
+<script>
+
+function convert(type){
+
+    let text = document.getElementById("text").value;
+
+    if(type=="upper")
+        document.getElementById("output").innerHTML = text.toUpperCase();
+
+    else if(type=="lower")
+        document.getElementById("output").innerHTML = text.toLowerCase();
+
+    else
+        document.getElementById("output").innerHTML = text;
+}
+
+</script>
+
+</body>
+</html>

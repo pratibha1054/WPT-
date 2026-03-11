@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>AJAX Product Table</title>
+    </head>
+<body>
+
+<h2>Product List</h2>
+
+<button onclick="loadData()">Load Products</button>
+
+<table border="1" id="productTable">
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Price</th>
+</tr>
+</table>
+
+<script>
+function loadData()
+{
+fetch("https://fakestoreapi.com/products")
+.then(res => res.json())
+.then(data => {
+
+let table = document.getElementById("productTable");
+
+data.forEach(product => {
+
+let row = table.insertRow();
+
+row.insertCell(0).innerHTML = product.id;
+row.insertCell(1).innerHTML = product.title;
+row.insertCell(2).innerHTML = product.price;
+
+});
+
+});
+}
+</script>
+
+</body>
+</html>

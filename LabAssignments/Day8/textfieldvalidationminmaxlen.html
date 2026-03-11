@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Validation Example</title>
+</head>
+<body>
+
+<input type="text" id="name" required minlength="3" maxlength="10">
+<button onclick="validate()">Submit</button>
+
+<span id="error" style="color:rgb(223, 41, 168)"></span>
+
+<script>
+
+function validate(){
+
+let input = document.getElementById("name");
+
+if(!input.checkValidity()){
+document.getElementById("error").innerHTML = input.validationMessage;
+}
+else{
+document.getElementById("error").innerHTML = "Valid Input";
+}
+
+}
+
+</script>
+
+</body>
+</html>
