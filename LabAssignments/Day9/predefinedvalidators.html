@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Validation Example</title>
+<style>
+.error {
+  color: red;
+  margin-left: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<form id="myForm">
+  <label>Enter Name:</label>
+
+  <input type="text" id="name" required minlength="3" maxlength="10">
+
+  <span id="errorMsg" class="error"></span>
+  <br><br>
+
+  <button type="button" onclick="validateField()">Submit</button>
+</form>
+
+<script>
+function validateField() {
+  var input = document.getElementById("name");
+  
+  var error = document.getElementById("errorMsg");
+
+  if (input.validity.valueMissing) {
+    error.innerHTML = "Field is required";
+  }
+  else if (input.validity.tooShort) {
+    error.innerHTML = "Minimum length is 3 characters";
+  }
+  else if (input.validity.tooLong) {
+    error.innerHTML = "Maximum length is 10 characters";
+  }
+  else {
+    error.innerHTML = "Valid input";
+  }
+}
+</script>
+
+</body>
+</html>

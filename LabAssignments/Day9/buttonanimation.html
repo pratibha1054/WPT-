@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+#box {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: relative;
+}
+
+.animate {
+  animation: moveBox 3s linear infinite;
+}
+
+@keyframes moveBox {
+  from { left: 0px; }
+  to { left: 300px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="box"></div>
+<br>
+
+<button onclick="startAnimation()">Start</button>
+<button onclick="stopAnimation()">Stop</button>
+
+<script>
+function startAnimation() {
+  document.getElementById("box").classList.add("animate");
+}
+
+function stopAnimation() {
+  document.getElementById("box").classList.remove("animate");
+}
+</script>
+
+</body>
+</html>

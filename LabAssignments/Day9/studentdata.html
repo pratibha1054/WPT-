@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Data</title>
+</head>
+
+<body>
+
+<h3>Enter Student Details</h3>
+
+Student ID:
+<input type="text" id="sid"><br><br>
+
+Student Name:
+<input type="text" id="sname"><br><br>
+
+<button onclick="addStudent()">Add Student</button>
+
+<h3>Student List</h3>
+
+<table border="1">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody id="studentTable"></tbody>
+</table>
+
+<script>
+function addStudent() {
+
+  var id = document.getElementById("sid").value;
+  var name = document.getElementById("sname").value;
+
+  // Create object
+  var student = {
+    studentId: id,
+    studentName: name
+  };
+
+  // Display in table
+  var table = document.getElementById("studentTable");
+  var row = table.insertRow();
+
+  row.insertCell(0).innerHTML = student.studentId;
+  row.insertCell(1).innerHTML = student.studentName;
+}
+</script>
+
+</body>
+</html>

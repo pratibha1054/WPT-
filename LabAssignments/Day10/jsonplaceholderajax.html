@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AJAX POST Example</title>
+</head>
+
+<body>
+
+<h2>Create Todo</h2>
+
+<label>User ID:</label>
+<input type="number" id="userid"><br><br>
+
+<label>Title:</label>
+<input type="text" id="title"><br><br>
+
+<label>Completed:</label>
+<select id="completed">
+<option value="true">True</option>
+<option value="false">False</option>
+</select>
+<br><br>
+
+<button onclick="postData()">Send POST Request</button>
+
+<p id="result"></p>
+
+<script>
+
+function postData() {
+
+    let userId = document.getElementById("userid").value;
+    let title = document.getElementById("title").value;
+    let completed = document.getElementById("completed").value;
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "https://jsonplaceholder.typicode.com/todos", true);
+
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 201) {
+            document.getElementById("result").innerHTML =
+                "Response: " + xhr.responseText;
+        }
+    };
+
+    let data = JSON.stringify({
+        userId: userId,
+        title: title,
+        completed: completed
+    });
+
+    xhr.send(data);
+}
+
+</script>
+
+</body>
+</html>

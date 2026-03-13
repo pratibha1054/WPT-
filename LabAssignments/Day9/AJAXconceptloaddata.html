@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Store Products</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align:center;">Product List</h2>
+
+    <button onclick="loadData()">Load Products</button>
+
+    <table id="ProductTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        function loadData() {
+            fetch("https://fakestoreapi.com/products")
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector("#ProductTable tbody");
+                    tableBody.innerHTML = "";
+
+                    data.forEach(product => {
+                        const row = document.createElement("tr");
+
+                        // ID
+                        const idCell = document.createElement("td");
+                        idCell.textContent = product.id;
+                        row.appendChild(idCell);
+
+                        // Title
+                        const titleCell = document.createElement("td");
+                        titleCell.textContent = product.title;
+                        row.appendChild(titleCell);
+
+                        // Price
+                        const priceCell = document.createElement("td");
+                        priceCell.textContent = product.price;
+                        row.appendChild(priceCell);
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error("Error loading data:", error));
+        }
+    </script>
+
+</body>
+</html>

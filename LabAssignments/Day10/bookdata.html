@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Details</title>
+</head>
+
+<body>
+
+<h2>Book Information</h2>
+
+<button onclick="showBook()">Show Book Details</button>
+
+<p id="output"></p>
+
+<script>
+
+function showBook() {
+
+    const book = {
+        title: "JavaScript Fundamentals",
+        author: "David Miller",
+        price: 599,
+        publisher: "Tech Press"
+    };
+
+    
+    const { title, author, price, publisher } = book;
+
+    
+    document.getElementById("output").innerHTML =
+        "Title: " + title + "<br>" +
+        "Author: " + author + "<br>" +
+        "Price: " + price + "<br>" +
+        "Publisher: " + publisher;
+}
+
+</script>
+
+</body>
+</html>
