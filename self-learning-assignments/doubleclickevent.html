@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Click and Double Event</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("*").click(function(){
+                    alert("Single Click Event Triggered");
+                });
+            $("*").dblclick(function(){
+                alert("Double Click Event Triggered");
+            });
+
+        });
+        </script>
+    </head>
+    <body>
+        <h2>JQuery Event Example</h2>
+        <p>Click or Double Click anywhere on this page</p>
+        <button>Click Me</button>
+    </body>
+</html>
