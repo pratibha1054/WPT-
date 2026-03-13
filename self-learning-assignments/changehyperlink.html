@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>
+            Change Link and Text using JQuery
+        </title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                     $("#mylink").attr("href","https://www.google.com");
+
+                $("#mylink").text("Visit Google");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <a id="mylink" href="https://www.wikipedia.com">Visit Wikipedia</a>
+        <br><br>
+
+        <button>Change Link</button>
+    </body>
+</html>
